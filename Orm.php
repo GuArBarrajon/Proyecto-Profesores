@@ -40,21 +40,21 @@
             $stm->execute();
         }
         public function insert($data){
-            $sql = "INSERT INTO {$this->table}(";
+            $sql = "INSERT INTO {$this->table} (";
             foreach($data as $key=> $value){
                 $sql .= "{$key},";
             }
-                $sql = trim($sql, ',');
-                $sql .= ") VALUES (";
-                foreach($data as $key => $value){
-                    $sql .= ":{$key}";
-                }
-                $sql = trim($sql, ',');
-                $sql .= ")";
-                $stm=$this->db->prepare($sql);
-                foreach($data as $key => $value){
-                    $stm->bindValue(":{$key}", $value);
-                }
+            $sql = trim($sql, ',');
+            $sql .= ") VALUES (";
+            foreach($data as $key => $value){
+                $sql .= ":{$key},";
+            }
+            $sql = trim($sql, ',');
+            $sql .= ")";
+            $stm=$this->db->prepare($sql);
+            foreach($data as $key => $value){
+                $stm->bindValue(":{$key}", $value);
+            }
             $stm->execute();
         }
     }
