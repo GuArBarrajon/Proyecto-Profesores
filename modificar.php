@@ -16,18 +16,19 @@ $profe = $profesorModel->getById($id);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modificar Profesor</title>
+    <link rel="stylesheet" href="CSS/styles.css">
 
     <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
     <link rel="manifest" href="image/site.webmanifest">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Modificar Profesor</title>
 </head>
 
 <body>
     <form class="col-4 p-4 m-auto" method="post">
-        <h3 class="text-center bg-light bg-gradient text-secondary">Modificar Profesor</h3>
+        <h3 class="text-center bg-light bg-gradient text-secondary">Modificar Docente</h3>
         <input type="hidden" name="id" value="<?= $_GET['id']?>">
         <?php include "Controller/modificar_profesor.php";?>
             <div class="mb-3">

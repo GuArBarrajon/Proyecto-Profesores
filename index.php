@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="CSS/styles.css">
 
     <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
@@ -14,20 +14,7 @@
     <title>Asignación de Días a Profesores</title>
 </head>
 <body class='container'>
-    <script>
-        function eliminar(){
-            let respuesta =confirm("Está seguro de eliminar?");
-            return respuesta;
-        }
-        function displayMessage1(){
-            alert("Docente eliminado correctamente");
-            location.replace('index.php'); //para que se recargue la página
-        }
-        function displayMessage2(){
-            alert("Error al eliminar docente");
-            location.href ='index.php';
-        }
-    </script>
+
     <?php
         require_once(__DIR__."/Model/Database.php");
         require_once(__DIR__."/Model/Orm.php");
@@ -48,9 +35,9 @@
         
         include "Controller/eliminar_profesor.php";
     ?>
-    <h1>Cuerpo docente de la institución</h1>
+    <h1>Cuerpo docente de la Institución</h1>
     <p>Seleccione 5 docentes para comenzar.</p>
-    <form action="Controller/procesar_asignacion.php" method="post">
+    <form action="" method="post">
     
         <table class = 'flex'>
             <thead>
@@ -72,29 +59,34 @@
                     echo "<td>{$profesor['telefono']}</td>";
                     echo "<td>{$profesor['email']}</td>";?>
                     <td>
-                                <a class="btn btn-small btn-warning" href="modificar.php?id=<?= $profesor['id'] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <a onclick="return eliminar()" href="index.php?id=<?= $profesor['id'] ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+                                <a class="btn btn-small btn-warning" href="modificar.php?id=<?= $profesor['id'] ?>" title="Modificar Docente"><i class="fa-solid fa-pen-to-square" ></i></a>
+                                <a onclick="return eliminar()" href="index.php?id=<?= $profesor['id'] ?>" class="btn btn-small btn-danger" title="Eliminar Docente"><i class="fa-solid fa-trash"></i></a>
                     </td>
                     <?php                     
-                    echo "<td><input type='checkbox' value={$profesor['id']} id={$profesor['id']} class='giru'></td";
+                    echo "<td><input type='checkbox' value={$profesor['id']} name='opciones[]' class='giru' onclick='validarCheckbox()'></td";
                     echo "</tr>";
                 }
                 ?>
             </select>
             </tbody>
         </table>
-        <button type="submit" class="btn btn-primary">Comenzar</button>
+        <button type="submit" class="btn btn-primary" onclick='validarProceso()' title="Generar Horario">Comenzar</button>
     </form>
     <br>
     <a class="btn btn-secondary" href="agregar.php">Agregar Docente</a>
 
     <!-- Tabla de resultados -->
-    <table id="tabla-resultados">
+    <div id="tabla-resultados">
         <!-- Aquí se mostrará la tabla de resultados -->
-    </table>
+        <?php 
+            include "Controller/procesar_asignacion.php"; 
+            include "Controller/agregar_dia.php";
+        ?>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-        <!--hhv b nvvbv-->
+    
+    <script src="JS/alertas.js"></script>
 </body>
 </html>

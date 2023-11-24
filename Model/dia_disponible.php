@@ -8,7 +8,7 @@
             $stm = $this->db->prepare("SELECT * FROM {$this->table} WHERE legajo_prof = :id");
             $stm->bindValue(":id", $id);
             $stm->execute();
-            return $stm->fetch();
+            return $stm->fetchAll();
         }
         public function deleteXProfe($id){
             $stm = $this->db->prepare("DELETE FROM {$this->table} WHERE legajo_prof = :id");
