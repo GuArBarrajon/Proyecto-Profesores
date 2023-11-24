@@ -1,8 +1,8 @@
 <?php
-require_once(__DIR__."/Database.php");
-require_once(__DIR__."/Orm.php");
-require_once(__DIR__."/profesor.php");
-require_once(__DIR__."/dia_disponible.php");
+require_once(__DIR__."/Model/Database.php");
+require_once(__DIR__."/Model/Orm.php");
+require_once(__DIR__."/Model/profesor.php");
+require_once(__DIR__."/Model/dia_disponible.php");
 
 $database = new Database();
 $coneccion = $database->getConnection();
@@ -28,7 +28,7 @@ $diaDispoModel = new DiaDisponible($coneccion);
 <body>
     <form class="col-4 p-4 m-auto" method="post">
         <h3 class="text-center bg-light bg-gradient text-secondary">Agregar Profesor</h3>
-        <?php include "agregar_profesor.php";?>
+        <?php include "Controller/agregar_profesor.php";?>
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" class="form-control" name="nombre">

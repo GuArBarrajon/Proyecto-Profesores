@@ -19,7 +19,7 @@ if (!empty($_POST["btnmodificar"])){
 
     }
     if($bandera== 1){
-        header("location:index.php");
+        header("location:../index.php");
     }
 }
 

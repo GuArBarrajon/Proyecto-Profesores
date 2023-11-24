@@ -29,11 +29,11 @@
         }
     </script>
     <?php
-        require_once(__DIR__."/Database.php");
-        require_once(__DIR__."/Orm.php");
-        require_once(__DIR__."/profesor.php");
-        require_once(__DIR__."/dia_disponible.php");
-        require_once(__DIR__."/dia.php");
+        require_once(__DIR__."/Model/Database.php");
+        require_once(__DIR__."/Model/Orm.php");
+        require_once(__DIR__."/Model/profesor.php");
+        require_once(__DIR__."/Model/dia_disponible.php");
+        require_once(__DIR__."/Model/dia.php");
     
         $database = new Database();
         $coneccion = $database->getConnection();
@@ -46,11 +46,11 @@
         $diaDispoModel = new DiaDisponible($coneccion);
         $diasDispos = $diaDispoModel->getAll();
         
-        include "eliminar_profesor.php";
+        include "Controller/eliminar_profesor.php";
     ?>
     <h1>Cuerpo docente de la institución</h1>
     <p>Seleccione 5 docentes para comenzar.</p>
-    <form action="procesar_asignacion.php" method="post">
+    <form action="Controller/procesar_asignacion.php" method="post">
     
         <table class = 'flex'>
             <thead>

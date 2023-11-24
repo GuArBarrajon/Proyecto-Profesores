@@ -1,7 +1,7 @@
 <?php
-require_once(__DIR__."/Database.php");
-require_once(__DIR__."/Orm.php");
-require_once(__DIR__."/profesor.php");
+require_once(__DIR__."/Model/Database.php");
+require_once(__DIR__."/Model/Orm.php");
+require_once(__DIR__."/Model/profesor.php");
 
 $database = new Database();
 $coneccion = $database->getConnection();
@@ -29,7 +29,7 @@ $profe = $profesorModel->getById($id);
     <form class="col-4 p-4 m-auto" method="post">
         <h3 class="text-center bg-light bg-gradient text-secondary">Modificar Profesor</h3>
         <input type="hidden" name="id" value="<?= $_GET['id']?>">
-        <?php include "modificar_profesor.php";?>
+        <?php include "Controller/modificar_profesor.php";?>
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" class="form-control" name="nombre" value="<?= $profe['nombres'] ?>">

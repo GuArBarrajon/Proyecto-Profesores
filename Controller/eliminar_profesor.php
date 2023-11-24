@@ -1,8 +1,8 @@
 <?php
-require_once(__DIR__."/Database.php");
-require_once(__DIR__."/Orm.php");
-require_once(__DIR__."/profesor.php");
-require_once(__DIR__."/dia_disponible.php");
+/*require("../Model/Database.php");
+require_once(__DIR__."../Model/Orm.php");
+require_once(__DIR__."../Model/profesor.php");
+require_once(__DIR__."../Model/dia_disponible.php");*/
 
 $database = new Database();
 $coneccion = $database->getConnection();
