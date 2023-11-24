@@ -68,32 +68,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
     }
+
     //Impresión de la tabla resultado
         echo "Resultado"."<br>";
         var_dump($resultados);
+        echo "<br>";
         echo "<table class = 'flex text-center'>";
         echo "<thead>";
         echo "<tr>";
-        foreach($resultados as $elemento){
-            $diaSeleccionado = $diaDispoModel->getById($elemento);
+        for( $i = 0; $i < 5; $i++) {
+            $diaSeleccionado = $diaDispoModel->getById($resultados[$i]);
             $dia= $diaModel->getById($diaSeleccionado['id_dia']);
             
             echo "<th>{$dia['nombre']}</th>";
         }
+        
         echo "</tr>";
         echo "</thead>";
         echo "<tbody>";
         echo "<tr>";
-        foreach($resultados as $elemento){
-            $diaSeleccionado = $diaDispoModel->getById($elemento);
+        for( $i = 0; $i < 5; $i++) {
+            $diaSeleccionado = $diaDispoModel->getById($resultados[$i]);
             $prof = $profesorModel->getById($diaSeleccionado['legajo_prof']);
             
             echo "<td>{$prof['nombres']}</td>";
         }
         echo "<tr>";
         echo "</tr>";
-        foreach($resultados as $elemento){
-            $diaSeleccionado = $diaDispoModel->getById($elemento);
+        for( $i = 0; $i < 5; $i++) {
+            $diaSeleccionado = $diaDispoModel->getById($resultados[$i]);
             $prof = $profesorModel->getById($diaSeleccionado['legajo_prof']);
             
             echo "<td>{$prof['apellido']}</td>";
