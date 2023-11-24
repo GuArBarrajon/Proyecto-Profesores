@@ -15,12 +15,14 @@
             return $stm->fetchAll();
         }
         public function getById($id){
-            $stm = $this->db->prepare("SELECT * FROM {$this->table} WHERE id = {$id}");
+            $stm = $this->db->prepare("SELECT * FROM {$this->table} WHERE id = :id");
+            $stm->bindValue(":id", $id);
             $stm->execute();
             return $stm->fetch();
         }
         public function deleteById($id){
-            $stm = $this->db->prepare("DELETE FROM {$this->table} WHERE id = {$id};");
+            $stm = $this->db->prepare("DELETE FROM {$this->table} WHERE id = :id");
+            $stm->bindValue(":id", $id);
             $stm->execute();
             return $stm->fetch();
         }
