@@ -2,13 +2,13 @@
 require_once(__DIR__."/Database.php");
 require_once(__DIR__."/Orm.php");
 require_once(__DIR__."/profesor.php");
+require_once(__DIR__."/dia_disponible.php");
 
 $database = new Database();
 $coneccion = $database->getConnection();
 
-$id = $_GET['id'];
 $profesorModel = new Profesor($coneccion);
-$profe = $profesorModel->getById($id);
+$diaDispoModel = new DiaDisponible($coneccion);
 
 ?>
 <!DOCTYPE html>
@@ -16,7 +16,7 @@ $profe = $profesorModel->getById($id);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modificar Profesor</title>
+    <title>Agregar Profesor</title>
 
     <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
@@ -27,27 +27,26 @@ $profe = $profesorModel->getById($id);
 
 <body>
     <form class="col-4 p-4 m-auto" method="post">
-        <h3 class="text-center bg-light bg-gradient text-secondary">Modificar Profesor</h3>
-        <input type="hidden" name="id" value="<?= $_GET['id']?>">
-        <?php include "modificar_profesor.php";?>
+        <h3 class="text-center bg-light bg-gradient text-secondary">Agregar Profesor</h3>
+        <?php include "agregar_profesor.php";?>
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" name="nombre" value="<?= $profe['nombres'] ?>">
+                <input type="text" class="form-control" name="nombre">
             </div>
             <div class="mb-3">
                 <label for="apellido" class="form-label">Apellido</label>
-                <input type="text" class="form-control" name="apellido" value="<?= $profe['apellido'] ?>">
+                <input type="text" class="form-control" name="apellido">
             </div>
             <div class="mb-3">
                 <label for="telefono" class="form-label">Teléfono</label>
-                <input type="text" class="form-control" name="telefono" value="<?= $profe['telefono'] ?>">
+                <input type="text" class="form-control" name="telefono">
             </div>
             <div class="mb-3">
                 <label for="correo" class="form-label">Email</label>
-                <input type="text" class="form-control" name="correo" value="<?= $profe['email'] ?>">
+                <input type="text" class="form-control" name="correo">
             </div>
 
-        <button type="submit" class="btn btn-primary" name="btnmodificar" value="ok">Modificar</button>
+        <button type="submit" class="btn btn-primary" name="btnregistrar" value="ok">Registrar</button>
     </form>
 </body>
 
