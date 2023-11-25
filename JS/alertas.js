@@ -1,3 +1,7 @@
+function cancelar(){
+    location.replace('index.php');
+}
+
 function eliminar(){
     let respuesta =confirm("Está seguro de eliminar?");
     return respuesta;

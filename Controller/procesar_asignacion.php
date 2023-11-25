@@ -34,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $i=0;
                     while($i <5){
                         if ($dDProf["id_dia"] == $diasAsignables[$i]) {
+                            
                             $resultados[$i] = $dDProf["id"];
                             
                             $diasAsignables[$i] = 0;
@@ -51,27 +52,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <?php include "Controller/agregar_dia.php";
                     for ($i = 0; $i < 5; $i++) {
                         if($diasAsignables[$i] != 0) {
-                            $dia = $diaModel->getById($i+1);
+                            $x = $i + 1;
+                            $dia = $diaModel->getById($x);
+                            
+                            echo $dia["id"];
                             echo '<label><input type="radio" name="dias_semana" value="' . $dia['id'] . '">' . $dia['nombre'] . '</label><br>';
                         }
                     }
                     
 
-                echo "Consulte con el docente si puede, seleccione y acepte o cancele y elija otro profesor. <br>";?>
+                echo "Consulte con el docente si puede, seleccione y acepte. O cancele y elija otro profesor. <br>";?>
                 <!-- Botones de Aceptar y Cancelar -->
                 <input type="submit" name="aceptar" value="Aceptar">
-                <input type="submit" name="cancelar" value="Cancelar">
+                <input type="submit" name="cancelar" value="Cancelar" onclick="cancelar()">
                 </form>
             <?php 
-            
-                
             }
         }
+        
     }
 
+    
     //Impresión de la tabla resultado
         echo "Resultado"."<br>";
-        var_dump($resultados);
         echo "<br>";
         echo "<table class = 'flex text-center'>";
         echo "<thead>";
