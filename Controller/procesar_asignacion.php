@@ -62,7 +62,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     }
                     
 
-                echo "Consulte con el docente si puede, seleccione y acepte. O cancele y elija otro profesor. <br>";?>
+                echo "Consulte con el docente si puede, seleccione y acepte. O cancele y elija otro profesor. <br>";
+                echo '<script>window.location = "#final";</script>';
+                ?>
                 <!-- Botones de Aceptar y Cancelar -->
                 <input type="submit" name="aceptar" value="Aceptar">
                 <input type="submit" name="cancelar" value="Cancelar" onclick="cancelar()">
@@ -110,6 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "</tbody>";
         echo "</table><br>";
         echo "<a class='btn btn-secondary' href='index.php'>Finalizar</a>";
+        echo '<script>window.location = "#final";</script>';
     }
 }
 ?>

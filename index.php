@@ -93,5 +93,6 @@
     <?php
         $database->closeConnection();
     ?>
+    <a  id="final"></a>
 </body>
 </html>
