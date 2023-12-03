@@ -5,7 +5,7 @@ CREATE DATABASE IF NOT EXISTS Escuela;
 USE Escuela;
 
 -- Crear la tabla "Profesores"
-CREATE TABLE Profesores (
+CREATE TABLE IF NOT EXISTS Profesores (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombres VARCHAR(25),
     apellido VARCHAR(25),
@@ -14,7 +14,7 @@ CREATE TABLE Profesores (
 );
 
 -- Crear la tabla "Dias"
-CREATE TABLE Dias (
+CREATE TABLE IF NOT EXISTS Dias (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(20)
 );
@@ -28,7 +28,7 @@ INSERT INTO Dias (nombre) VALUES
     ('Viernes');
 
 -- Crear la tabla "Dias_disponibles"
-CREATE TABLE Dias_disponibles (
+CREATE TABLE IF NOT EXISTS Dias_disponibles (
     id INT AUTO_INCREMENT PRIMARY KEY,
     legajo_prof INT,
     id_dia INT,
@@ -78,3 +78,11 @@ INSERT INTO Dias_disponibles (legajo_prof, id_dia) VALUES
         (30, 1), (30, 3), (30, 5);		
       
 SELECT * FROM dias_disponibles;
+
+CREATE TABLE IF NOT EXISTS Administradores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    correo VARCHAR(50) NOT NULL UNIQUE,
+    contrasenia VARCHAR(50) NOT NULL
+);
+
+INSERT INTO Administradores (correo, contrasenia) VALUES ('admin', 'admin');

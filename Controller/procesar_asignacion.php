@@ -78,8 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     //Impresión de la tabla resultado
     if (count($resultados) == 5){
-        echo "<br>"."<h1>Resultado</h1>"."<br>";
-        echo "<br>";
+        echo "<h1>Resultado</h1>";
         echo "<table class = 'flex text-center'>";
         echo "<thead>";
         echo "<tr>";
@@ -111,7 +110,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "</tr>";
         echo "</tbody>";
         echo "</table><br>";
-        echo "<a class='btn btn-secondary' href='index.php'>Finalizar</a>";
+        echo "<a class='btn btn-secondary' href='home.php'>Finalizar</a>";
         echo '<script>window.location = "#final";</script>';
     }
 }

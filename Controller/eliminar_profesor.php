@@ -7,7 +7,7 @@ if (!empty($_GET["id"])){
     $profesorModel->deleteById($id);
     $bandera = 1;
     if($bandera==1){
-        header("location:../index.php");
+        header("location:../home.php");
     }
     else
     {

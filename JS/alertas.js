@@ -1,5 +1,5 @@
 function cancelar(){
-    location.replace('index.php');
+    location.replace('home.php');
 }
 
 function eliminar(){
@@ -49,6 +49,6 @@ function validarProceso() {
     });
     if (contadorSeleccionados < maxCheckboxes) {
         alert ("Seleccionó menos profesores que la cantidad requerida");
-        location.replace('index.php');
+        location.replace('home.php');
     }
 }

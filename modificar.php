@@ -27,29 +27,32 @@ $profe = $profesorModel->getById($id);
 </head>
 
 <body>
-    <form class="col-4 p-4 m-auto" method="post">
-        <h3 class="text-center bg-light bg-gradient text-secondary">Modificar Docente</h3>
-        <input type="hidden" name="id" value="<?= $_GET['id']?>">
-        <?php include "Controller/modificar_profesor.php";?>
-            <div class="mb-3">
-                <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" name="nombre" value="<?= $profe['nombres'] ?>">
-            </div>
-            <div class="mb-3">
-                <label for="apellido" class="form-label">Apellido</label>
-                <input type="text" class="form-control" name="apellido" value="<?= $profe['apellido'] ?>">
-            </div>
-            <div class="mb-3">
-                <label for="telefono" class="form-label">Teléfono</label>
-                <input type="text" class="form-control" name="telefono" value="<?= $profe['telefono'] ?>">
-            </div>
-            <div class="mb-3">
-                <label for="correo" class="form-label">Email</label>
-                <input type="text" class="form-control" name="correo" value="<?= $profe['email'] ?>">
-            </div>
-
-        <button type="submit" class="btn btn-primary" name="btnmodificar" value="ok">Modificar</button>
-    </form>
+    <div class="formulario">
+        <form class="col-md-4 col-sm-8 p-4 m-auto" method="post">
+            <h3 class="text-center bg-light bg-gradient text-secondary">Modificar Docente</h3>
+            <input type="hidden" name="id" value="<?= $_GET['id']?>">
+            <?php include "Controller/modificar_profesor.php";?>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" value="<?= $profe['nombres'] ?>">
+                </div>
+                <div class="mb-3">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" name="apellido" value="<?= $profe['apellido'] ?>">
+                </div>
+                <div class="mb-3">
+                    <label for="telefono" class="form-label">Teléfono</label>
+                    <input type="text" class="form-control" name="telefono" value="<?= $profe['telefono'] ?>">
+                </div>
+                <div class="mb-3">
+                    <label for="correo" class="form-label">Email</label>
+                    <input type="text" class="form-control" name="correo" value="<?= $profe['email'] ?>">
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary" name="btnmodificar" value="ok">Modificar</button>
+                </div>
+        </form>
+    </div>
     <?php
         $database->closeConnection();
     ?>

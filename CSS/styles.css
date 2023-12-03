@@ -2,14 +2,31 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    padding: .3125rem;
+    background-color: #b0a7a7  !important;
+    box-sizing: border-box;
+}
+
+.formulario{margin-top: 25px}
+
+form{
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+form:hover{
+    border: 1px solid grey;
+    background-color: rgb(210, 234, 242);
+    transition-duration: 0.5s;
 }
 
 h1 {
+    padding: 1.625rem;
     text-align: center;
     color: #333;
 }
+
+h5{padding: .625rem;}
 
 p {
     text-align: center;
@@ -19,14 +36,6 @@ p {
 ul {
     list-style: none;
     padding: 0;
-}
-
-li {
-    background-color: #fff;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilos para los selects de profesores */
@@ -59,12 +68,39 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #ccc;
+    border: 1px solid #ccc !important;
 }
 
 th, td {
     padding: 10px;
-    text-align: center;
+    text-align: center !important;
+}
+
+#instituto{
+    border: 1px solid white;
+    padding: 6px 8px;
+    border-radius: 8px;
+}
+#instituto:hover{
+    border: none;
+}
+
+#boton{
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+    padding: 6px 8px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+#boton:hover{
+    border: 1px solid grey;
+    color: gray;
+}
+
+#comenzar{
+    margin: .625rem;
+    ;
 }
 
 /* Estilos para la ventana emergente (popup) */
@@ -93,13 +129,30 @@ th, td {
     margin-top: 20px;
 }
 
-/* Estilos para hacer la página responsive */
-@media (max-width: 768px) {
-    li {
-        margin: 5px;
-    }
+@media (max-width: 1250px) {
+    body { font-size: 14px; }
+}
 
-    select {
-        padding: 5px;
+/*Portátiles*/
+@media (max-width: 992px) {
+    body{font-size: 12px;}
+    th, td {padding: .3125rem; }
+}
+
+/*Tablets*/
+@media (max-width: 768px) {
+    body {
+        font-size: 10px;
+        width: 1000vw;
     }
+    
+    th, td {
+        font-size: .75rem;
+        padding: .125rem; 
+    }
+}
+
+/*Celulares*/
+@media (max-width: 576px) {
+    
 }

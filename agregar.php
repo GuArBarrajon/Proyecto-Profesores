@@ -28,28 +28,31 @@ $diaDispoModel = new DiaDisponible($coneccion);
 </head>
 
 <body>
-    <form class="col-4 p-4 m-auto" method="post">
-        <h3 class="text-center bg-light bg-gradient text-secondary">Agregar Docente</h3>
-        <?php include "Controller/agregar_profesor.php";?>
-            <div class="mb-3">
-                <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" name="nombre">
-            </div>
-            <div class="mb-3">
-                <label for="apellido" class="form-label">Apellido</label>
-                <input type="text" class="form-control" name="apellido">
-            </div>
-            <div class="mb-3">
-                <label for="telefono" class="form-label">Teléfono</label>
-                <input type="text" class="form-control" name="telefono">
-            </div>
-            <div class="mb-3">
-                <label for="correo" class="form-label">Email</label>
-                <input type="text" class="form-control" name="correo">
-            </div>
-
-        <button type="submit" class="btn btn-primary" name="btnregistrar" value="ok">Registrar</button>
-    </form>
+    <div class="formulario">
+        <form class="col-md-4 col-sm-8 p-4 m-auto" method="post">
+            <h3 class="text-center bg-light bg-gradient text-secondary">Agregar Docente</h3>
+            <?php include "Controller/agregar_profesor.php";?>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" name="nombre">
+                </div>
+                <div class="mb-3">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" name="apellido">
+                </div>
+                <div class="mb-3">
+                    <label for="telefono" class="form-label">Teléfono</label>
+                    <input type="text" class="form-control" name="telefono">
+                </div>
+                <div class="mb-3">
+                    <label for="correo" class="form-label">Email</label>
+                    <input type="text" class="form-control" name="correo">
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary" name="btnregistrar" value="ok">Registrar</button>
+                </div>
+        </form>
+    </div>
     <?php
         $database->closeConnection();
     ?>
