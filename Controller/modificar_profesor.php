@@ -1,17 +1,38 @@
 <?php
-$bandera;
+$bandera = 1;
 //primero verificamos que el botón se haya presionado
 if (!empty($_POST["btnmodificar"])){
     //luego verificamos que todos los campos hayan sido completados
     if(!empty($_POST["nombre"]) and !empty($_POST["apellido"]) and !empty($_POST["telefono"]) and !empty($_POST["correo"])){
-        $id=$_POST["id"];
-        $nombre=$_POST["nombre"];
-        $apellido=$_POST["apellido"];
-        $telefono=$_POST["telefono"];
-        $correo=$_POST["correo"];
+        if(strlen($_POST["nombre"]) > 25){
+            echo '<div class="alert alert-warning">El nombre es demasiado largo</div>';
+            $bandera=0;
+        }else{
+            $nombre=$_POST["nombre"];
+        }
+        if(strlen($_POST["apellido"]) > 25){
+            echo '<div class="alert alert-warning">El apellido es demasiado largo</div>';
+            $bandera=0;
+        }else{
+            $apellido=$_POST["apellido"];
+        }
+        if(is_numeric($_POST["telefono"]) and strlen($_POST["telefono"])==10){
+            $telefono=$_POST["telefono"];           
+        }else{   
+            echo '<div class="alert alert-warning">El teléfono debe ser un número de 10 dígitos</div>';
+            $bandera=0;     
+        }
+        if(!filter_var($_POST['correo'], FILTER_VALIDATE_EMAIL)){
+            echo '<div class="alert alert-warning">Ingrese un correo válido</div>';
+            $bandera=0;     
+        }
+        else{
+            $correo=$_POST["correo"];            
+        }
 
-        $profesorModel->updateById($id,['nombres'=>$nombre, 'apellido'=>$apellido, 'telefono'=>$telefono,'email'=>$correo]);
-        $bandera=1;
+        if($bandera!= 0){
+            $profesorModel->updateById($id,['nombres'=>$nombre, 'apellido'=>$apellido, 'telefono'=>$telefono,'email'=>$correo]);
+        }
     } 
     else{
         echo '<div class="alert alert-warning">Alguno de los campos está vacío</div>';

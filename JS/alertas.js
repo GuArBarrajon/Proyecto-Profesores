@@ -6,12 +6,11 @@ function eliminar(){
     let respuesta =confirm("Está seguro de eliminar?");
     return respuesta;
 }
-function displayMessage1(){
-    alert("Docente eliminado correctamente");
-}
+
 function displayMessage2(){
     alert("Error al eliminar docente");
 }
+
 
 function validarCheckbox() {
     // Configura el número máximo de checkboxes permitidos

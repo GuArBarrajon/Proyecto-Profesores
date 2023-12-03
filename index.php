@@ -36,7 +36,7 @@
         include "Controller/eliminar_profesor.php";
     ?>
     <h1>Cuerpo docente de la Institución</h1>
-    <p>Seleccione 5 docentes para comenzar.</p>
+    <h5>Seleccione 5 docentes para comenzar.</h5>
     <form action="" method="post">
     
         <table class = 'flex'>

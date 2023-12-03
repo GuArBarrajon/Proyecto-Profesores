@@ -7,7 +7,6 @@ if (!empty($_GET["id"])){
     $profesorModel->deleteById($id);
     $bandera = 1;
     if($bandera==1){
-        echo '<script> displayMessage1() </script>';
         header("location:../index.php");
     }
     else

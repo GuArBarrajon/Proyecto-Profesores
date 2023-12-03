@@ -7,10 +7,10 @@ USE Escuela;
 -- Crear la tabla "Profesores"
 CREATE TABLE Profesores (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nombres VARCHAR(255),
-    apellido VARCHAR(255),
-    telefono VARCHAR(20),
-    email VARCHAR(255)
+    nombres VARCHAR(25),
+    apellido VARCHAR(25),
+    telefono CHAR(10),
+    email VARCHAR(50)
 );
 
 -- Crear la tabla "Dias"
@@ -67,7 +67,7 @@ INSERT INTO Profesores (nombres, apellido, telefono, email) VALUES
     ('Gustavo', 'Cortés', '5432109876', 'gustavo.cortes@email.com'),
     ('Valeria', 'Rojas', '2109876543', 'valeria.rojas@email.com'),
     ('Ricardo', 'Vera', '4321098765', 'ricardo.vera@email.com'),
-    ('ROdolfo', 'López', '1133558765', 'rodo.lopez@email.com');
+    ('Rodolfo', 'López', '1133558765', 'rodo.lopez@email.com');
 
 -- Insertar días disponibles para los 30 profesores
 INSERT INTO Dias_disponibles (legajo_prof, id_dia) VALUES
