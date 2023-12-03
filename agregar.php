@@ -50,6 +50,9 @@ $diaDispoModel = new DiaDisponible($coneccion);
 
         <button type="submit" class="btn btn-primary" name="btnregistrar" value="ok">Registrar</button>
     </form>
+    <?php
+        $database->closeConnection();
+    ?>
 </body>
 
 </html>

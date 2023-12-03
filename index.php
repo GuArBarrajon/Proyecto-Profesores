@@ -70,10 +70,12 @@
             </select>
             </tbody>
         </table>
-        <button type="submit" class="btn btn-primary" onclick='validarProceso()' title="Generar Horario">Comenzar</button>
+        <div>
+            <button type="submit" class="btn btn-primary" onclick='validarProceso()' title="Generar Horario">Comenzar</button>
+        </div>
     </form>
-    <br>
-    <a class="btn btn-secondary" href="agregar.php">Agregar Docente</a>
+    <div><a class="btn btn-secondary" href="agregar.php">Agregar Docente</a></div>
+    
 
     <!-- Tabla de resultados -->
     <div id="tabla-resultados">
@@ -88,5 +90,8 @@
         crossorigin="anonymous"></script>
     
     <script src="JS/alertas.js"></script>
+    <?php
+        $database->closeConnection();
+    ?>
 </body>
 </html>

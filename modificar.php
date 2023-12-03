@@ -50,6 +50,9 @@ $profe = $profesorModel->getById($id);
 
         <button type="submit" class="btn btn-primary" name="btnmodificar" value="ok">Modificar</button>
     </form>
+    <?php
+        $database->closeConnection();
+    ?>
 </body>
 
 </html>

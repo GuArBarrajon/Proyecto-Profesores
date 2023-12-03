@@ -8,11 +8,9 @@ function eliminar(){
 }
 function displayMessage1(){
     alert("Docente eliminado correctamente");
-    location.replace('index.php'); //para que se recargue la página
 }
 function displayMessage2(){
     alert("Error al eliminar docente");
-    location.href ='index.php';
 }
 
 function validarCheckbox() {
@@ -37,6 +35,8 @@ function validarCheckbox() {
         alert("Solo se pueden seleccionar hasta " + maxCheckboxes + " checkboxes. Desmarque las sobrantes, no serán procesadas");
     }
 }
+
+//verifica que se hayan seleccionado 5 profesores
 function validarProceso() {
     var maxCheckboxes = 5;
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');

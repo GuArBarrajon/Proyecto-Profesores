@@ -1,4 +1,5 @@
 <?php
+$resultados = array();
 
 // Verifica si el formulario ha sido enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -14,11 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: Seleccionaste más checkboxes de los permitidos.";
     }
     elseif (count($checkboxValues) < $maxCheckboxes) {
-        echo "Aquí se mostrará el resultado";
+        echo "";
     } 
     else {
         $diasAsignables = [1, 2, 3, 4, 5];
-        $resultados = array();
+        
         //recupera cada uno de los profesores seleccionados
         foreach ($checkboxValues as $key => $value) {
             $profesor = $profesorModel->getById($value);
@@ -47,15 +48,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($bandera == 0) {
                 echo "A {$profesor['nombres']} {$profesor['apellido']} no se le pudo asignar día <br>";
                 echo "Quedan disponibles: <br>";?>
-                    <form  method="post">
+                    <form  action = "" method="post">
                     <input type="hidden" name="id" value="<?= $Id_prof?>">
-                    <?php include "Controller/agregar_dia.php";
+                    <?php
+                    include "Controller/agregar_dia.php";
                     for ($i = 0; $i < 5; $i++) {
                         if($diasAsignables[$i] != 0) {
                             $x = $i + 1;
                             $dia = $diaModel->getById($x);
                             
-                            echo $dia["id"];
                             echo '<label><input type="radio" name="dias_semana" value="' . $dia['id'] . '">' . $dia['nombre'] . '</label><br>';
                         }
                     }
@@ -66,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="submit" name="aceptar" value="Aceptar">
                 <input type="submit" name="cancelar" value="Cancelar" onclick="cancelar()">
                 </form>
-            <?php 
+                <?php 
             }
         }
         
@@ -74,7 +75,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     
     //Impresión de la tabla resultado
-        echo "Resultado"."<br>";
+    if (count($resultados) == 5){
+        echo "<br>"."<h1>Resultado</h1>"."<br>";
         echo "<br>";
         echo "<table class = 'flex text-center'>";
         echo "<thead>";
@@ -106,6 +108,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         echo "</tr>";
         echo "</tbody>";
-        echo "</table>";
+        echo "</table><br>";
+        echo "<a class='btn btn-secondary' href='index.php'>Finalizar</a>";
+    }
 }
 ?>

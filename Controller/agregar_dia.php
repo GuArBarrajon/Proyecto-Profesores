@@ -7,13 +7,12 @@
                         // Recoger el día seleccionado
                         $diaSeleccionado = $_POST['dias_semana'];
                         $idProf = $_POST['id'];
-                        echo $idProf;
-                        echo $diaSeleccionado;
                         
                         $diaDispoModel->insert(['legajo_prof'=>$idProf,'id_dia'=>$diaSeleccionado]);
+                        echo "<p>Datos guardados. Repita la selección y cliquee comenzar.</p>";
                     } 
                     elseif (isset($_POST['cancelar'])) {
-                        echo "Operación cancelada. No se agregaron entradas.";
+                        echo "<p>Operación cancelada. No se agregaron entradas. Seleccione otros profesores</p>";
                     }
                 }  
                 
