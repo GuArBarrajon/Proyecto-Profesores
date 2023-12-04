@@ -9,7 +9,7 @@
         {
             foreach ($administradores as $adm) 
             {
-                if ($adm['correo'] == $_POST['usuario'] and $adm['contrasenia'] == $_POST['contraseña']) 
+                if ($adm['usuario'] == $_POST['usuario'] and $adm['contrasenia'] == $_POST['contraseña']) 
                 {
                     header("location:../home.php");
                     $bandera = 1;

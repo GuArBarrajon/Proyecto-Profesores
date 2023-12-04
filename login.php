@@ -26,7 +26,7 @@ $administradorModel = new Administrador($coneccion);
 
 <body>
     <div class="formulario">
-    <form class="col-md-4 col-sm-8 p-4 m-auto flex" action="" method="post">
+    <form class="col-md-4 col-sm-8 p-4 m-auto" action="" method="post">
         <h3 class="text-center bg-light bg-gradient text-secondary">Inicio de Sesión</h3>
         <?php include "Controller/verificarUsuario.php";?>
             <div class="mb-3">

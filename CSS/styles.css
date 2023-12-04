@@ -7,7 +7,9 @@ body {
     box-sizing: border-box;
 }
 
-.formulario{margin-top: 25px}
+.formulario{
+    margin-top: 25px;
+}
 
 form{
     background-color: #fff;
@@ -63,7 +65,7 @@ input[type="submit"]:hover {
 /* Estilos para la tabla de resultados */
 table {
     width: 100%;
-    border-collapse: collapse;
+    
     margin-top: 20px;
 }
 
@@ -98,10 +100,14 @@ th, td {
     color: gray;
 }
 
-#comenzar{
-    margin: .625rem;
-    ;
+.botones{
+    display: flex;
+    justify-content: flex-end;
+    padding: .625rem;
+    margin-right: 2.5rem;
 }
+
+#comenzar{margin-right: 1.5rem;}
 
 /* Estilos para la ventana emergente (popup) */
 .popup {
@@ -137,19 +143,23 @@ th, td {
 @media (max-width: 992px) {
     body{font-size: 12px;}
     th, td {padding: .3125rem; }
+    .botones{margin-right: 1rem;}
+    #comenzar{margin-right: .5rem;}
 }
 
 /*Tablets*/
 @media (max-width: 768px) {
     body {
         font-size: 10px;
-        width: 1000vw;
+        
     }
     
     th, td {
         font-size: .75rem;
         padding: .125rem; 
     }
+    .botones{margin-right: .75rem;}
+    #comenzar{margin-right: .25rem;}
 }
 
 /*Celulares*/

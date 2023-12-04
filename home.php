@@ -57,9 +57,9 @@
         include "Controller/eliminar_profesor.php";
     ?>
     <h1>Cuerpo docente de la Institución</h1>
-    <h5>Seleccione 5 docentes para comenzar.</h5>
-    <form action="" method="post">
     
+    <form action="" method="post">
+    <h5>Seleccione 5 docentes para comenzar.</h5>
         <table class = 'tablaDocentes'>
             <thead>
                 <tr>
@@ -91,11 +91,11 @@
             </select>
             </tbody>
         </table>
-        <div>
+        <div class="botones">
             <button type="submit" class="btn btn-primary" onclick='validarProceso()' title="Generar Horario" id="comenzar">Comenzar</button>
         </div>
     </form>
-    <div><a class="btn btn-secondary" href="agregar.php">Agregar Docente</a></div>
+    <div class="botones"><a class="btn btn-secondary" href="agregar.php">Agregar Docente</a></div>
     
 
     <!-- Tabla de resultados -->

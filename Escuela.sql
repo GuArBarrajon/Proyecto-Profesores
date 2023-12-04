@@ -81,8 +81,8 @@ SELECT * FROM dias_disponibles;
 
 CREATE TABLE IF NOT EXISTS Administradores (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    correo VARCHAR(50) NOT NULL UNIQUE,
+    usuario VARCHAR(50) NOT NULL UNIQUE,
     contrasenia VARCHAR(50) NOT NULL
 );
 
-INSERT INTO Administradores (correo, contrasenia) VALUES ('admin', 'admin');
+INSERT INTO Administradores (usuario, contrasenia) VALUES ('admin', 'admin');
