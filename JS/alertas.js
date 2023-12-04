@@ -52,3 +52,38 @@ function validarProceso() {
         location.replace('home.php');
     }
 }
+
+//verifica que se hayan seleccionado x cantidad de checkbox
+function validarCheckbox1($min,$max) {
+    console.log("Ingreso al validarCheckBox1");
+    // Configura el número máximo de checkboxes permitidos
+    var maxCheckboxes = $max;
+    var minCheckboxes = $min;
+    
+    // Obtiene todos los elementos checkbox
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    var btnComenzar = document.getElementById('btnConfirmar');
+    
+    // Contador para llevar el control de los checkboxes seleccionados
+    var contadorSeleccionados = 0;
+    
+    // Verifica cuántos checkboxes están seleccionados
+    checkboxes.forEach(function(checkbox) {
+        if (checkbox.checked) {
+            contadorSeleccionados++;
+        }
+    });
+    
+    // Si se excede el número máximo, desmarca el último checkbox seleccionado
+    if ((contadorSeleccionados <= minCheckboxes) || (contadorSeleccionados > maxCheckboxes)) {
+        btnComenzar.disabled = true;
+        btnComenzar.setAttribute('class', 'btn disabled btn-primary'); 
+    if(contadorSeleccionados > maxCheckboxes){        
+        alert("Solo se pueden seleccionar hasta " + maxCheckboxes + " checkboxes. Desmarque las sobrantes, no serán procesadas");}
+    }else{
+        // alert("Selecciono " + maxCheckboxes + " checkboxes. Puede continuar.");
+        btnComenzar.disabled = false;   
+        btnComenzar.setAttribute('class', 'btn btn-primary');
+    }
+   
+}
