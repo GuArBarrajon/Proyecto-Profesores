@@ -87,7 +87,7 @@ th, td {
     border: none;
 }
 
-#boton{
+#boton, #botonIniciar{
     color: white;
     margin-left: 15px;
     text-decoration: none;
@@ -95,9 +95,13 @@ th, td {
     border-radius: 8px;
     transition: 0.2s;
 }
-#boton:hover{
+#botonIniciar:hover, #boton:hover{
     border: 1px solid grey;
     color: gray;
+}
+
+#botonIniciar{
+    margin-left: 35rem;
 }
 
 .botones{
@@ -107,7 +111,7 @@ th, td {
     margin-right: 2.5rem;
 }
 
-#comenzar{margin-right: 1.5rem;}
+#btnConfirmar{margin-right: 1.5rem;}
 
 /* Estilos para la ventana emergente (popup) */
 .popup {
@@ -136,7 +140,8 @@ th, td {
 }
 
 @media (max-width: 1250px) {
-    body { font-size: 14px; }
+    body { font-size: 14px;}
+    #botonIniciar{margin-left: 25rem;}
 }
 
 /*Portátiles*/
@@ -144,7 +149,8 @@ th, td {
     body{font-size: 12px;}
     th, td {padding: .3125rem; }
     .botones{margin-right: 1rem;}
-    #comenzar{margin-right: .5rem;}
+    #btnConfirmar{margin-right: .5rem;}
+    #botonIniciar{margin-left: 5rem;}
 }
 
 /*Tablets*/
@@ -159,7 +165,7 @@ th, td {
         padding: .125rem; 
     }
     .botones{margin-right: .75rem;}
-    #comenzar{margin-right: .25rem;}
+    #btnConfirmar{margin-right: .25rem;}
 }
 
 /*Celulares*/

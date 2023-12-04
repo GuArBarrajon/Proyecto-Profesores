@@ -40,7 +40,7 @@ if (!empty($_POST["btnmodificar"])){
 
     }
     if($bandera== 1){
-        header("location:../home.php");
+        header("location:home.php");
     }
 }
 

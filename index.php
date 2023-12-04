@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="\CSS\styles.css">
+    <link rel="stylesheet" href="CSS/styles.css">
 
     <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
@@ -22,16 +22,8 @@
                     <span class="navbar-toggler-icon" id="toggle"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link nav-menu-link-active" aria-current="page" href="home.php">Docentes</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="Administradores.php">Administradores</a>
-                            </li>
-                        </ul>
-                        <a href="/login.php" id="boton">Iniciar Sesión (no funciona)</a>
-                        <a href="login.php" id="boton">Iniciar Sesión</a>
+
+                        <a href="login.php" id="botonIniciar">Iniciar Sesión</a>
                     </div>
                 </div>
             </nav>

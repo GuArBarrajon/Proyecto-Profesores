@@ -40,7 +40,7 @@ if (!empty($_POST["btnregistrar"])){
 
     }
     if($bandera== 1){
-        header("location:../home.php#final");
+        header("location:home.php#final");
     }
 }
 ?>

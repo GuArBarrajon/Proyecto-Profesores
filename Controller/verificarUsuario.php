@@ -11,7 +11,6 @@
             {
                 if ($adm['usuario'] == $_POST['usuario'] and $adm['contrasenia'] == $_POST['contraseña']) 
                 {
-                    //header("location:../home.php"); //no me funciona
                     header("location:./home.php");
                     $bandera = 1;
                 }

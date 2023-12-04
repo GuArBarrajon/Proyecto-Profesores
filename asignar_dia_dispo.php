@@ -45,9 +45,9 @@ $carga_dia = $diaDispoModel->getByProfe($_GET['id']);
 </head>
 
 <body>
-    <form class="col-4 p-4 m-auto" method="post">
+    <form class="col-md-4 col-sm-8 p-4 m-auto" method="post">
         <h3 class="text-center bg-light bg-gradient text-secondary">Docente</h3>
-        <?php include "Controller/agregar_dia.php"; ?>
+        <?php include "Controller/modificar_dia.php"; ?>
         <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
             <input type="text" class="form-control" name="nombre" id="nombre" placeholder="<?php echo $docente['nombres'] ?>" disabled>
@@ -65,7 +65,7 @@ $carga_dia = $diaDispoModel->getByProfe($_GET['id']);
             <input type="text" class="form-control" name="correo" id="correo" placeholder="<?php echo $docente['email'] ?>" disabled>
         </div>
 
-        <div class="table-responsive-sm">
+        <div class="table-responsive-xl">
             <table class="table table-striped">
                 <thead>
                     <tr>
