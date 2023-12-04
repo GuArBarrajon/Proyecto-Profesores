@@ -30,7 +30,8 @@
                                 <a class="nav-link" href="Administradores.php">Administradores</a>
                             </li>
                         </ul>
-                        <a href="/login.php" id="boton">Iniciar Sesión</a>
+                        <a href="/login.php" id="boton">Iniciar Sesión (no funciona)</a>
+                        <a href="login.php" id="boton">Iniciar Sesión</a>
                     </div>
                 </div>
             </nav>

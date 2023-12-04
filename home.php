@@ -30,7 +30,8 @@
                                 <a class="nav-link" href="Administradores.php">Administradores</a>
                             </li>
                         </ul>
-                        <a href="/login.php" id="boton">Cerrar Sesión</a>
+                        <a href="/login.php" id="boton">Cerrar Sesión (no funciona)</a>
+                        <a href="login.php" id="boton">Cerrar Sesión</a>
                     </div>
                 </div>
             </nav>
@@ -53,6 +54,9 @@
         $dias = $diaModel->getAll();
         $diaDispoModel = new DiaDisponible($coneccion);
         $diasDispos = $diaDispoModel->getAll();
+
+        $cantMinCheckbox = 4; // para la funcion validar que acepta valores
+        $cantMaxCheckbox = 5; // para la funcion validar que acepta valores
         
         include "Controller/eliminar_profesor.php";
     ?>
@@ -68,6 +72,8 @@
                     <th>Apellido</th>
                     <th>Telefóno</th>
                     <th>Email</th>
+                    <th>Acciones</th>
+                    <th>Seleccionar</th>
                 </tr>
             </thead>
             <tbody>
@@ -80,11 +86,15 @@
                     echo "<td>{$profesor['telefono']}</td>";
                     echo "<td>{$profesor['email']}</td>";?>
                     <td>
+                                <a class="btn btn-small btn-success " href="asignar_dia_dispo.php?id=<?= $profesor['id'] ?>" title="Asignar Dias"><i class="fa-regular fa-calendar-check"></i></i></a>
                                 <a class="btn btn-small btn-warning" href="modificar.php?id=<?= $profesor['id'] ?>" title="Modificar Docente"><i class="fa-solid fa-pen-to-square" ></i></a>
                                 <a onclick="return eliminar()" href="home.php?id=<?= $profesor['id'] ?>" class="btn btn-small btn-danger" title="Eliminar Docente"><i class="fa-solid fa-trash"></i></a>
                     </td>
-                    <?php                     
-                    echo "<td><input type='checkbox' value={$profesor['id']} name='opciones[]' class='giru' onclick='validarCheckbox()'></td";
+                    <?php   
+                    //original                  
+                    //echo "<td><input type='checkbox' value={$profesor['id']} name='opciones[]' class='giru' onclick='validarCheckbox()'></td"; 
+                    //version 2
+                    echo "<td><input type='checkbox' value={$profesor['id']} name='opciones[]' class='giru' onclick='validarCheckbox1({$cantMinCheckbox},{$cantMaxCheckbox})'></td";
                     echo "</tr>";
                 }
                 ?>
@@ -93,6 +103,7 @@
         </table>
         <div class="botones">
             <button type="submit" class="btn btn-primary" onclick='validarProceso()' title="Generar Horario" id="comenzar">Comenzar</button>
+            <button type="submit" class="btn disabled btn-primary" disabled title="Generar Horario" id="btnConfirmar">Comenzar v2</button>
         </div>
     </form>
     <div class="botones"><a class="btn btn-secondary" href="agregar.php">Agregar Docente</a></div>
