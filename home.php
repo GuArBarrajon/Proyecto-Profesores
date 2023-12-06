@@ -27,10 +27,10 @@
                                 <a class="nav-link nav-menu-link-active" aria-current="page" href="home.php">Docentes</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Administradores.php">Administradores</a>
+                                <a class="nav-link" href="administradores.php">Administradores</a>
                             </li>
                         </ul>
-                        <a href="login.php" id="boton">Cerrar Sesión</a>
+                        <a href="index.php" id="boton">Cerrar Sesión</a>
                     </div>
                 </div>
             </nav>
