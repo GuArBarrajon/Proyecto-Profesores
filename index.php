@@ -27,7 +27,19 @@
                     </div>
                 </div>
             </nav>
-        </header>
+    </header>
+
+        <h1>Bienvenido a Nuestra Institución Educativa</h1>
+
+    <section>
+        <h2>¡Gracias por utilizar nuestra aplicación!</h2>
+        <p>Aquí podrá generar horarios de los cursos, gestionar los datos de los docentes y sus días disponibles. Además podrá gestionar quiénes tienen acceso a esta aplicación.</p>
+        <p>Siempre comprometidos con la calidad educativa.</p>
+    </section>
+
+    <footer >
+        &copy; 2023 Nuestra Institución Educativa. Todos los derechos reservados.
+    </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

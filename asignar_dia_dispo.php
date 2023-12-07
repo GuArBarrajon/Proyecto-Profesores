@@ -66,6 +66,7 @@ $carga_dia = $diaDispoModel->getByProfe($_GET['id']);
         </div>
 
         <div class="table-responsive-xl">
+            <p>Seleccione los nuevos días disponibles y vuelva a marcar los actuales si el profesor desea mantenerlos.</p>
             <table class="table table-striped">
                 <thead>
                     <tr>
