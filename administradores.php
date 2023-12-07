@@ -1,3 +1,14 @@
+<?php
+// Inicia la sesión
+session_start();
+
+// Verifica si el usuario ha iniciado sesión, si no es así, redirige a la página de inicio de sesión
+if (!isset($_SESSION['usuario'])) {
+    header("Location:index.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -30,7 +41,7 @@
                                 <a class="nav-link" href="administradores.php">Administradores</a>
                             </li>
                         </ul>
-                        <a href="index.php" id="boton">Cerrar Sesión</a>
+                        <a href="Controller/cerrar_sesion.php" id="boton">Cerrar Sesión</a>
                     </div>
                 </div>
             </nav>

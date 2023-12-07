@@ -1,4 +1,13 @@
 <?php
+
+// Inicia la sesión
+session_start();
+
+// Verifica si el usuario ha iniciado sesión, si no es así, redirige a la página de inicio de sesión
+if (!isset($_SESSION['usuario'])) {
+    header("Location:index.php");
+}
+
 require_once(__DIR__."/Model/Database.php");
 require_once(__DIR__."/Model/Orm.php");
 require_once(__DIR__."/Model/administrador.php");

@@ -1,4 +1,13 @@
 <?php
+
+// Inicia la sesión
+session_start();
+
+// Verifica si el usuario ha iniciado sesión, si no es así, redirige a la página de inicio de sesión
+if (!isset($_SESSION['usuario'])) {
+    header("Location:index.php");
+}
+
 require_once(__DIR__ . "/Model/Database.php");
 require_once(__DIR__ . "/Model/Orm.php");
 require_once(__DIR__ . "/Model/profesor.php");
@@ -17,14 +26,6 @@ $dias = $diaModel->getAll();
 $diaDispoModel = new DiaDisponible($coneccion);
 $carga_dia = $diaDispoModel->getByProfe($_GET['id']);
 
-// VERIFICAR DATOS ----- BORRAR
-// echo "<pre> Carga Dias Asignados";
-// var_dump($carga_dia);
-// echo "</pre>";
-
-// echo "<pre> Dias Semana";
-// var_dump($dias);
-// echo "</pre>";
 
 ?>
 <!DOCTYPE html>

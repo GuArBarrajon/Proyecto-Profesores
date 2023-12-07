@@ -1,3 +1,14 @@
+<?php
+// Inicia la sesión
+session_start();
+
+// Verifica si el usuario ya ha iniciado sesión, si es así, redirige a la página de inicio
+if (isset($_SESSION['usuario'])) {
+    header("Location:home.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
