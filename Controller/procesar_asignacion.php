@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     }
                     
 
-                echo "Consulte con el docente si puede, seleccione y acepte. O cancele y elija otro profesor. <br>";
+                echo "Consulte con el docente si puede, seleccione uno y acepte. O cancele y elija otro profesor. <br>";
                 echo '<script>window.location = "#final";</script>';
                 ?>
                 <!-- Botones de Aceptar y Cancelar -->
