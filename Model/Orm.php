@@ -24,7 +24,6 @@
             $stm = $this->db->prepare("DELETE FROM {$this->table} WHERE id = :id");
             $stm->bindValue(":id", $id);
             $stm->execute();
-            return $stm->fetch();
         }
         public function updateById($id, $data){
             $sql = "UPDATE {$this->table} SET ";
